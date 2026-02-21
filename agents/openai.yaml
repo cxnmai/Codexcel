@@ -1,0 +1,8 @@
+interface:
+  display_name: "Codexcel"
+  short_description: "View, edit, and diff Excel files"
+  brand_color: "#217346"
+  default_prompt: "Use $codexcel to inspect a workbook, apply formula-based openpyxl edits, and show before/after xleak diffs."
+
+policy:
+  allow_implicit_invocation: true
