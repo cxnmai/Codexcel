@@ -62,6 +62,18 @@ View specific sheet:
 xleak <filename>.xlsx --sheet "<sheetname>"
 ```
 
+If `xleak` truncates long text in a cell, read the full value with a Python CLI one-liner:
+
+```bash
+python -c 'from openpyxl import load_workbook; path="<workbook.xlsx-or.xlsm>"; wb=load_workbook(path, keep_vba=path.lower().endswith(".xlsm")); ws=wb["<sheetname>"]; print(ws["<cell>"].value)'
+```
+
+Example:
+
+```bash
+python -c 'from openpyxl import load_workbook; wb=load_workbook("report.xlsx"); ws=wb["Summary"]; print(ws["B12"].value)'
+```
+
 For scoped before/after output, capture section before editing:
 
 ```bash
